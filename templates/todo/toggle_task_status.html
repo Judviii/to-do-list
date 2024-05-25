@@ -1,0 +1,12 @@
+<form method="post" action="{% url 'todo:toggle-task-status' pk=task.pk %}">
+  {% csrf_token %}
+  {% if task.is_done %}
+    <button type="submit" class="btn btn-secondary link-to-page">
+      Undo
+    </button>
+  {% else %}
+    <button type="submit" class="btn btn-success link-to-page">
+      Completed
+    </button>
+  {% endif %}
+</form>
